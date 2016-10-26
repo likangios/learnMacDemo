@@ -1,0 +1,90 @@
+//
+//  PrefixHeader.pch
+//  learnMacDemo
+//
+//  Created by FengLing on 16/10/26.
+//  Copyright © 2016年 lk. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#import "AFNetworking.h"
+#import "JSONModel.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define ScreenBounds [NSScreen mainScreen].frame
+#define ScreenWidth [NSScreen mainScreen].frame.size.width
+#define ScreenHeight [NSScreen mainScreen].frame.size.height
+
+#define ApplicationDelegate                 ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+
+#define UserDefaults                        [NSUserDefaults standardUserDefaults]
+#define NotificationCenter                  [NSNotificationCenter defaultCenter]
+#define SharedApplication                   [UIApplication sharedApplication]
+#define Bundle                              [NSBundle mainBundle]
+
+#define MainScreen                          [NSScreen mainScreen]
+
+#define ShowNetworkActivityIndicator()      [UIApplication sharedApplication].networkActivityIndicatorVisible = YES
+#define HideNetworkActivityIndicator()      [UIApplication sharedApplication].networkActivityIndicatorVisible = NO
+#define NetworkActivityIndicatorVisible(x)  [UIApplication sharedApplication].networkActivityIndicatorVisible = x
+
+
+#define zt_color(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+
+#define zt_color_a(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+//判断是否为iPhone
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+
+//判断是否为iPad
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
+//判断是否为ipod
+#define IS_IPOD ([[[UIDevice currentDevice] model] isEqualToString:@"iPod touch"])
+
+//判断是否为iPhone5
+#define IS_IPHONE_5_SCREEN [[NSScreen mainScreen] bounds].size.height >= 568.0f && [[NSScreen mainScreen] bounds].size.height < 1024.0f
+
+/**
+ *  等于某个版本号
+ *
+ *
+ *  @return 等于 YES  否则 NO
+ */
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+/**
+ *  大于某个版本号
+ *
+ *
+ *  @return 大于 YES 否则 NO
+ */
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+/**
+ *  大于或等于版本号
+ *
+ *
+ *  @return 大于或等于 YES 否则 NO
+ */
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+/**
+ *  小于某个版本号
+ *
+ *
+ *  @return 小于 YES 否则 NO
+ */
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+/**
+ *  小于等于V
+ *
+ *
+ *  @return 小于或等于 YES 否则 NO
+ */
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+
+
+#endif /* PrefixHeader_pch */
