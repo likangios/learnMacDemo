@@ -8,17 +8,7 @@
 
 #import "MyWindowViewControll.h"
 #import "XMLLogin.h"
-
-@interface testModel : JSONModel
-
-@property (nonatomic,strong) NSString               *message;
-
-@property (nonatomic,strong) NSString               *status;
-
-@end
-@implementation testModel
-
-@end
+#import "MarkViewController.h"
 
 
 
@@ -28,15 +18,22 @@
 
 @property (nonatomic,weak) IBOutlet  NSTextField                   *pwd;
 
+@property (nonatomic,strong) MarkViewController               *mark;
 @end
 
 @implementation MyWindowViewControll
 
 
+- (MarkViewController *)mark{
+    if (!_mark) {
+        _mark = [[MarkViewController alloc]init];
+    }
+    return _mark;
+}
 - (IBAction)buttonClick:(id)sender{
     
-    [[XMLLogin shared] RequestWithPhone:self.phone AndPassword:self.pwd Blocks:^(id obj, NSString *code, NSString *message) {
-        
+    [[XMLLogin shared] RequestWithPhone:self.phone.accessibilityCriticalValue AndPassword:self.pwd.accessibilityCriticalValue Blocks:^(id obj, NSString *code, NSString *message) {
+        self.contentViewController = self.mark;
     }];
 }
 

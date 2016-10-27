@@ -17,6 +17,8 @@
 
 @property (nonatomic,weak) IBOutlet  NSTextField                   *pwd;
 
+@property (nonatomic,strong) MarkViewController               *mark;
+
 
 
 @end
@@ -27,12 +29,15 @@
     [super viewDidLoad];
     // Do view setup here.
 }
+- (MarkViewController *)mark{
+    if (!_mark) {
+        _mark = [[MarkViewController alloc]init];
+    }
+    return _mark;
+}
 - (IBAction)buttonClick:(id)sender{
     
     [[XMLLogin shared] RequestWithPhone:self.phone.accessibilityValue AndPassword:self.pwd.accessibilityValue Blocks:^(id obj, NSString *code, NSString *message) {
-        MarkViewController *mark = [[MarkViewController alloc]initWithNibName:@"MarkViewController" bundle:nil];
-        
-        NSLog(@"code:%@--message:%@",code,message);
         
     }];
     
