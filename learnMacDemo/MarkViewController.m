@@ -64,23 +64,27 @@
     
     NSInteger row = ceil(ids.count/4.0);
     
-    CGFloat buttonW = ScreenWidth/4.0;
+    
+    CGFloat buttonW = self.view.frame.size.width/4.0;
     
     CGFloat height =  40;
     
     NSScrollView *scrollView = [[NSScrollView alloc]initWithFrame:self.view.bounds];
-//    scrollView.contentSize = NSMakeSize(ScreenWidth, row * height +100);
+
+    
     [self.view addSubview:scrollView];
     
     for (int i = 0; i< ids.count; i++) {
         
         NSNumber *obj = ids[i];
-        NSButton *button =[NSButton buttonWithTitle:titles[i] target:self action:@selector(buttonclick:)];
+        NSButton *button =[[NSButton alloc]init];
+        [button setButtonType:NSButtonTypeMomentaryPushIn];
+        [button setTitle:ids[i]];
+        [button sendAction:@selector(buttonclick:) to:self];
         button.tag = obj.intValue;
-        button.frame = CGRectMake(i%4*buttonW, i/4*height, buttonW, height);
-        [scrollView addSubview:button];
-        button.layer.borderWidth = 1.0;
-        button.layer.cornerRadius = 8.0;
+        NSRect Rect = NSMakeRect(i%4*buttonW, i/4*height, buttonW, height);
+        button.frame = Rect;
+        [self.view addSubview:button];
     }
     
     // Do any additional setup after loading the view from its nib.

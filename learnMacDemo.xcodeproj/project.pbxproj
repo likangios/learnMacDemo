@@ -44,7 +44,6 @@
 		61801F101DC0A84B00ED33BB /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 61801F0D1DC0A84B00ED33BB /* UserInfoModel.m */; };
 		61801F131DC0A8C000ED33BB /* ResultOrder_SubmitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 61801F121DC0A8C000ED33BB /* ResultOrder_SubmitModel.m */; };
 		61801F171DC0A91B00ED33BB /* MarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61801F151DC0A91B00ED33BB /* MarkViewController.m */; };
-		61801F181DC0A91B00ED33BB /* MarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61801F161DC0A91B00ED33BB /* MarkViewController.xib */; };
 		61801F1B1DC0AF2700ED33BB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61801F1A1DC0AF2700ED33BB /* LoginViewController.m */; };
 		618F70961DB84E170006A9F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F70951DB84E170006A9F0 /* AppDelegate.m */; };
 		618F70991DB84E170006A9F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F70981DB84E170006A9F0 /* main.m */; };
@@ -52,6 +51,9 @@
 		618F709E1DB84E180006A9F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 618F709D1DB84E180006A9F0 /* Assets.xcassets */; };
 		618F70A11DB84E180006A9F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 618F709F1DB84E180006A9F0 /* Main.storyboard */; };
 		618F70AA1DB8775C0006A9F0 /* MyWindowViewControll.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F70A91DB8775C0006A9F0 /* MyWindowViewControll.m */; };
+		61BBB4B31DC2FF790094E79D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BBB4B11DC2FF790094E79D /* MainViewController.m */; };
+		61BBB4B61DC3403C0094E79D /* MarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61BBB4B51DC3403C0094E79D /* MarkViewController.xib */; };
+		61BBB4B81DC3404C0094E79D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61BBB4B71DC3404C0094E79D /* MainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,7 +132,6 @@
 		61801F121DC0A8C000ED33BB /* ResultOrder_SubmitModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultOrder_SubmitModel.m; sourceTree = "<group>"; };
 		61801F141DC0A91B00ED33BB /* MarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkViewController.h; sourceTree = "<group>"; };
 		61801F151DC0A91B00ED33BB /* MarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkViewController.m; sourceTree = "<group>"; };
-		61801F161DC0A91B00ED33BB /* MarkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkViewController.xib; sourceTree = "<group>"; };
 		61801F191DC0AF2700ED33BB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		61801F1A1DC0AF2700ED33BB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		618F70911DB84E170006A9F0 /* learnMacDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learnMacDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +145,10 @@
 		618F70A21DB84E180006A9F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		618F70A81DB8775C0006A9F0 /* MyWindowViewControll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWindowViewControll.h; sourceTree = "<group>"; };
 		618F70A91DB8775C0006A9F0 /* MyWindowViewControll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWindowViewControll.m; sourceTree = "<group>"; };
+		61BBB4B01DC2FF790094E79D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		61BBB4B11DC2FF790094E79D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		61BBB4B51DC3403C0094E79D /* MarkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkViewController.xib; sourceTree = "<group>"; };
+		61BBB4B71DC3404C0094E79D /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		ADC5139C9D5F34623D9E2736 /* libPods-learnMacDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-learnMacDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -324,7 +329,10 @@
 				61801F1A1DC0AF2700ED33BB /* LoginViewController.m */,
 				61801F141DC0A91B00ED33BB /* MarkViewController.h */,
 				61801F151DC0A91B00ED33BB /* MarkViewController.m */,
-				61801F161DC0A91B00ED33BB /* MarkViewController.xib */,
+				61BBB4B51DC3403C0094E79D /* MarkViewController.xib */,
+				61BBB4B01DC2FF790094E79D /* MainViewController.h */,
+				61BBB4B11DC2FF790094E79D /* MainViewController.m */,
+				61BBB4B71DC3404C0094E79D /* MainViewController.xib */,
 				618F709A1DB84E180006A9F0 /* ViewController.h */,
 				618F709B1DB84E180006A9F0 /* ViewController.m */,
 				61801EB11DC0A61E00ED33BB /* PrefixHeader.pch */,
@@ -412,7 +420,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				61801EA11DC0993B00ED33BB /* Info.plist in Resources */,
-				61801F181DC0A91B00ED33BB /* MarkViewController.xib in Resources */,
+				61BBB4B61DC3403C0094E79D /* MarkViewController.xib in Resources */,
+				61BBB4B81DC3404C0094E79D /* MainViewController.xib in Resources */,
 				618F709E1DB84E180006A9F0 /* Assets.xcassets in Resources */,
 				618F70A11DB84E180006A9F0 /* Main.storyboard in Resources */,
 			);
@@ -428,6 +437,7 @@
 				61801F131DC0A8C000ED33BB /* ResultOrder_SubmitModel.m in Sources */,
 				61801F061DC0A82200ED33BB /* XMLStoreService.m in Sources */,
 				61801F1B1DC0AF2700ED33BB /* LoginViewController.m in Sources */,
+				61BBB4B31DC2FF790094E79D /* MainViewController.m in Sources */,
 				61801EA61DC0993B00ED33BB /* JSONHTTPClient.m in Sources */,
 				61801F101DC0A84B00ED33BB /* UserInfoModel.m in Sources */,
 				61801EFB1DC0A7D800ED33BB /* XMLLogout.m in Sources */,

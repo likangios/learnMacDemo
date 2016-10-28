@@ -19,6 +19,7 @@
 
 @property (nonatomic,strong) MarkViewController               *mark;
 
+@property (nonatomic,assign) BOOL             loginSuccess;
 
 
 @end
@@ -39,9 +40,15 @@
     
     [[XMLLogin shared] RequestWithPhone:self.phone.accessibilityValue AndPassword:self.pwd.accessibilityValue Blocks:^(id obj, NSString *code, NSString *message) {
         
+        if ([code isEqualToString:@"0"]) {
+            self.loginSuccess = YES;
+        }else{
+            self.loginSuccess = NO;
+        }
+        
+        [self presentViewControllerAsModalWindow:self.mark];
+    
     }];
     
-    
 }
-
 @end

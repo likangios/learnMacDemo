@@ -7,34 +7,17 @@
 //
 
 #import "MyWindowViewControll.h"
-#import "XMLLogin.h"
-#import "MarkViewController.h"
-
 
 
 @interface MyWindowViewControll ()
 
-@property (nonatomic,weak) IBOutlet  NSTextField                   *phone;
 
-@property (nonatomic,weak) IBOutlet  NSTextField                   *pwd;
-
-@property (nonatomic,strong) MarkViewController               *mark;
 @end
 
 @implementation MyWindowViewControll
 
 
-- (MarkViewController *)mark{
-    if (!_mark) {
-        _mark = [[MarkViewController alloc]init];
-    }
-    return _mark;
+-(void)awakeFromNib{
+    [super awakeFromNib];
 }
-- (IBAction)buttonClick:(id)sender{
-    
-    [[XMLLogin shared] RequestWithPhone:self.phone.accessibilityCriticalValue AndPassword:self.pwd.accessibilityCriticalValue Blocks:^(id obj, NSString *code, NSString *message) {
-        self.contentViewController = self.mark;
-    }];
-}
-
 @end
