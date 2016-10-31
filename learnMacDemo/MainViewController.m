@@ -287,9 +287,7 @@ static NSTimeInterval  nottieminterval = 0.001;
         if (self.btn1.state == 1) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.Activity1 startAnimation:nil];
-            });
-            NSLog(@"time %@",self.startTime.stringValue);
-            
+            });            
             if ([self shouldStartWithStartTime:self.startTime.stringValue]) {
                 NSTimeInterval  start  =  CACurrentMediaTime();
                 //            [self requestStart1:start];
