@@ -10,12 +10,20 @@
 #import "XMLStoreService.h"
 #import "XMLTradeServerinfo.h"
 #import "TradModel.h"
+#import "LoginMarkViewController.h"
 @interface MarkViewController ()
 
+@property (nonatomic,strong) LoginMarkViewController               *loginMark;
 @end
 
 @implementation MarkViewController
 
+- (LoginMarkViewController *)loginMark{
+    if (!_loginMark) {
+        _loginMark = [[LoginMarkViewController alloc]initWithNibName:@"LoginMarkViewController" bundle:nil];
+    }
+    return _loginMark;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"title";
@@ -62,10 +70,11 @@
                         @"山西邮币卡",@"华鼎文件中心",@"华夏购销汇",@"大交所邮币卡",
                         @"中文两岸",@"北文+山西",@"模拟环境"];
     
-    NSInteger row = ceil(ids.count/4.0);
+    NSInteger sizeOfRow = 8;
     
+    NSInteger row = ceil(ids.count/sizeOfRow);
     
-    CGFloat buttonW = self.view.frame.size.width/4.0;
+    CGFloat buttonW = self.view.frame.size.width/sizeOfRow;
     
     CGFloat height =  40;
     
@@ -78,12 +87,13 @@
         
         NSNumber *obj = ids[i];
         NSButton *button =[[NSButton alloc]init];
-        [button setButtonType:NSButtonTypeMomentaryPushIn];
+        [button setButtonType:NSButtonTypePushOnPushOff];
         [button setTitle:ids[i]];
-        [button sendAction:@selector(buttonclick:) to:self];
         button.tag = obj.intValue;
-        NSRect Rect = NSMakeRect(i%4*buttonW, i/4*height, buttonW, height);
+        NSRect Rect = NSMakeRect(i%sizeOfRow*buttonW, i/sizeOfRow*height, buttonW, height);
         button.frame = Rect;
+        [button setTarget:self];
+        [button setAction:@selector(buttonclick:)];
         [self.view addSubview:button];
     }
     
@@ -96,6 +106,7 @@
 //    [ZTUntil showHUDAddedTo:self.view];
     
     [[XMLTradeServerinfo shared] RequestBlocks:^(id obj, NSString *code, NSString *message) {
+        NSLog(@"code:%@ message:%@",code,message);
 //        [ZTUntil hideAllHUDsForView:self.view];
         if ([code isEqualToString:@"0"]) {
             NSArray *array = (NSArray *)obj;
@@ -103,10 +114,8 @@
             NSString *url = model.TradeUrl;
             [XMLStoreService StoreTRADEURL:url];
             [XMLStoreService storeTradeUrls:obj WithMarkId:[XMLStoreService markId]];
-            
-//            LoginViewController *main = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
-//            main.markId = btn.tag;
-//            [self.navigationController pushViewController:main animated:YES];
+            self.loginMark.markId = [NSString stringWithFormat:@"%ld",btn.tag];
+            [self presentViewControllerAsSheet:self.loginMark];
         }else{
 //            [ZTUntil showErrorHUDViewAtView:self.view WithTitle:message];
         }

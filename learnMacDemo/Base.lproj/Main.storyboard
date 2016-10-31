@@ -61,7 +61,7 @@
                                     <items>
                                         <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
                                             <connections>
-                                                <action selector="newDocument:" target="Ady-hI-5gd" id="4Si-XN-c54"/>
+                                                <action selector="CommandNClick:" target="Ady-hI-5gd" id="0c3-HI-noU"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
@@ -674,20 +674,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="224" height="235"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RQd-co-VSn">
-                                <rect key="frame" x="64" y="173" width="96" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="Dug-uZ-zkS"/>
-                                    <constraint firstAttribute="width" constant="96" id="WJf-5b-5eW"/>
-                                </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="13675158507" placeholderString="手机号" drawsBackground="YES" id="HNH-E7-a4A">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AKh-eT-1HU">
-                                <rect key="frame" x="79" y="88" width="66" height="32"/>
+                                <rect key="frame" x="79" y="90" width="66" height="32"/>
                                 <buttonCell key="cell" type="push" title="登陆" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lTy-rA-Q2h">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -696,31 +684,48 @@
                                     <action selector="buttonClick:" target="XfG-lQ-9wD" id="uWQ-9d-waV"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rks-cY-IsT">
-                                <rect key="frame" x="64" y="136" width="96" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="96" id="AFk-6b-EF2"/>
-                                    <constraint firstAttribute="height" constant="22" id="WOz-h4-ql5"/>
-                                </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="88B-03-GxQ">
+                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zom-LL-Uzm">
+                                <rect key="frame" x="52" y="136" width="120" height="20"/>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="iQB-hh-Swg">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </secureTextFieldCell>
+                            </secureTextField>
+                            <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c4p-qu-5H3">
+                                <rect key="frame" x="52" y="171" width="123" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="RLa-fL-tjf"/>
+                                    <constraint firstAttribute="width" constant="120" id="xji-cQ-o9S"/>
+                                </constraints>
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="13675158507" placeholderString="手机号" drawsBackground="YES" completes="NO" usesDataSource="YES" numberOfVisibleItems="5" id="Ikj-DT-Awd">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </comboBoxCell>
+                                <connections>
+                                    <outlet property="dataSource" destination="XfG-lQ-9wD" id="zNz-zH-iE6"/>
+                                    <outlet property="delegate" destination="XfG-lQ-9wD" id="KJB-mu-xs5"/>
+                                </connections>
+                            </comboBox>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="RQd-co-VSn" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="40" id="3Bh-9N-wPJ"/>
-                            <constraint firstItem="Rks-cY-IsT" firstAttribute="top" secondItem="RQd-co-VSn" secondAttribute="bottom" constant="15" id="5CU-J5-aBz"/>
+                            <constraint firstItem="zom-LL-Uzm" firstAttribute="width" secondItem="c4p-qu-5H3" secondAttribute="width" id="EbN-NT-AxG"/>
                             <constraint firstItem="AKh-eT-1HU" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="IgI-we-VHk"/>
-                            <constraint firstItem="RQd-co-VSn" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Qdy-CC-sUC"/>
-                            <constraint firstItem="Rks-cY-IsT" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="T2U-WC-iZv"/>
-                            <constraint firstItem="AKh-eT-1HU" firstAttribute="top" secondItem="Rks-cY-IsT" secondAttribute="bottom" constant="20" id="iQB-dK-7j7"/>
+                            <constraint firstItem="c4p-qu-5H3" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="40" id="KtW-5V-uZ4"/>
+                            <constraint firstItem="AKh-eT-1HU" firstAttribute="top" secondItem="zom-LL-Uzm" secondAttribute="bottom" constant="18" id="Wo0-jI-6xu"/>
+                            <constraint firstItem="zom-LL-Uzm" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="b8o-Po-SGe"/>
+                            <constraint firstItem="c4p-qu-5H3" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="fL3-Ki-vwC"/>
+                            <constraint firstItem="zom-LL-Uzm" firstAttribute="height" secondItem="c4p-qu-5H3" secondAttribute="height" id="kzX-xi-1gC"/>
+                            <constraint firstItem="zom-LL-Uzm" firstAttribute="top" secondItem="c4p-qu-5H3" secondAttribute="bottom" constant="19" id="q6w-kk-084"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="phone" destination="RQd-co-VSn" id="Dgo-zo-Qmd"/>
-                        <outlet property="pwd" destination="Rks-cY-IsT" id="K2e-RB-cMv"/>
+                        <outlet property="phone" destination="c4p-qu-5H3" id="oyW-vv-spl"/>
+                        <outlet property="pwd" destination="zom-LL-Uzm" id="utf-HX-DxX"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

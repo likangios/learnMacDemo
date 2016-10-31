@@ -8,8 +8,10 @@
 
 #import "XMLStoreService.h"
 #import "UserInfoModel.h"
-
+#import "AppModel.h"
 static UserInfoModel *currentModel;
+
+static  NSString *AppAccount = @"appaccount";
 
 @implementation XMLStoreService
 +(instancetype)shared{
@@ -112,6 +114,49 @@ static UserInfoModel *currentModel;
     [def setValue:string forKey:@"password"];
     [def  synchronize];
 }
+
+#pragma mark store  app account 
++ (AppModel *)searchAppAccountWithAccount:(NSString *)account FromArray:(NSArray *)originArray{
+    
+    for (AppModel *obj in originArray) {
+        if ([obj.account isEqualToString:account]) {
+            return obj;
+            break;
+        }
+    }
+    return nil;
+    
+}
++ (NSArray *)getAppAccounts{
+    
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    
+    NSData *encodedObject = [userDefault objectForKey:AppAccount];
+    
+    id  obj  = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    
+    if ([obj isKindOfClass:[AppModel class]]) {
+        return @[obj];
+    }
+    return obj;
+    
+}
++ (void)StoreAppAccount:(AppModel *)account{
+   
+    NSArray *accounts = [XMLStoreService getAppAccounts];
+    
+    NSMutableArray *array = [NSMutableArray arrayWithArray:accounts];
+    
+    AppModel *searchModle = [XMLStoreService searchAppAccountWithAccount:account.account FromArray:accounts];
+    if (searchModle) {
+        [array removeObject:searchModle];
+    }
+    [array insertObject:account atIndex:0];
+    
+    [self storeUserInfosArray:array WithMarkId:AppAccount];
+}
+
+#pragma mark -
 + (NSString *)markId{
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     NSString *obj = [def objectForKey:@"markId"];
@@ -204,6 +249,7 @@ static UserInfoModel *currentModel;
 }
 
 +(NSArray *)userinfosWithMarkId:(NSString *)markId{
+    
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     NSData *encodedObject = [userDefault objectForKey:markId];
     

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 //20160830135635378cn6565080014342093.22450170545
 @class UserInfoModel;
-
+@class AppModel;
 @interface XMLStoreService : NSObject
 
 + (NSString *)PINSCODE;
@@ -36,6 +36,11 @@
 
 + (NSString *)password;
 + (void)Storepassword:(NSString *)string;
+
++ (NSArray *)getAppAccounts;
+
++ (void)StoreAppAccount:(AppModel *)account;
+
 
 + (NSString *)markId;
 + (void)StoremarkId:(NSString *)string;

@@ -51,6 +51,9 @@
 		618F709E1DB84E180006A9F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 618F709D1DB84E180006A9F0 /* Assets.xcassets */; };
 		618F70A11DB84E180006A9F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 618F709F1DB84E180006A9F0 /* Main.storyboard */; };
 		618F70AA1DB8775C0006A9F0 /* MyWindowViewControll.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F70A91DB8775C0006A9F0 /* MyWindowViewControll.m */; };
+		61A91D761DC712B9009858E9 /* LoginMarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A91D741DC712B9009858E9 /* LoginMarkViewController.m */; };
+		61A91D771DC712B9009858E9 /* LoginMarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61A91D751DC712B9009858E9 /* LoginMarkViewController.xib */; };
+		61A91D7A1DC73D2C009858E9 /* AppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A91D791DC73D2C009858E9 /* AppModel.m */; };
 		61BBB4B31DC2FF790094E79D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BBB4B11DC2FF790094E79D /* MainViewController.m */; };
 		61BBB4B61DC3403C0094E79D /* MarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61BBB4B51DC3403C0094E79D /* MarkViewController.xib */; };
 		61BBB4B81DC3404C0094E79D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61BBB4B71DC3404C0094E79D /* MainViewController.xib */; };
@@ -145,6 +148,11 @@
 		618F70A21DB84E180006A9F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		618F70A81DB8775C0006A9F0 /* MyWindowViewControll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWindowViewControll.h; sourceTree = "<group>"; };
 		618F70A91DB8775C0006A9F0 /* MyWindowViewControll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWindowViewControll.m; sourceTree = "<group>"; };
+		61A91D731DC712B9009858E9 /* LoginMarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginMarkViewController.h; sourceTree = "<group>"; };
+		61A91D741DC712B9009858E9 /* LoginMarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginMarkViewController.m; sourceTree = "<group>"; };
+		61A91D751DC712B9009858E9 /* LoginMarkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginMarkViewController.xib; sourceTree = "<group>"; };
+		61A91D781DC73D2C009858E9 /* AppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppModel.h; sourceTree = "<group>"; };
+		61A91D791DC73D2C009858E9 /* AppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppModel.m; sourceTree = "<group>"; };
 		61BBB4B01DC2FF790094E79D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		61BBB4B11DC2FF790094E79D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		61BBB4B51DC3403C0094E79D /* MarkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkViewController.xib; sourceTree = "<group>"; };
@@ -291,6 +299,8 @@
 				61801F121DC0A8C000ED33BB /* ResultOrder_SubmitModel.m */,
 				61801F0A1DC0A84B00ED33BB /* TradModel.h */,
 				61801F0B1DC0A84B00ED33BB /* TradModel.m */,
+				61A91D781DC73D2C009858E9 /* AppModel.h */,
+				61A91D791DC73D2C009858E9 /* AppModel.m */,
 				61801F0C1DC0A84B00ED33BB /* UserInfoModel.h */,
 				61801F0D1DC0A84B00ED33BB /* UserInfoModel.m */,
 			);
@@ -330,6 +340,9 @@
 				61801F141DC0A91B00ED33BB /* MarkViewController.h */,
 				61801F151DC0A91B00ED33BB /* MarkViewController.m */,
 				61BBB4B51DC3403C0094E79D /* MarkViewController.xib */,
+				61A91D731DC712B9009858E9 /* LoginMarkViewController.h */,
+				61A91D741DC712B9009858E9 /* LoginMarkViewController.m */,
+				61A91D751DC712B9009858E9 /* LoginMarkViewController.xib */,
 				61BBB4B01DC2FF790094E79D /* MainViewController.h */,
 				61BBB4B11DC2FF790094E79D /* MainViewController.m */,
 				61BBB4B71DC3404C0094E79D /* MainViewController.xib */,
@@ -424,6 +437,7 @@
 				61BBB4B81DC3404C0094E79D /* MainViewController.xib in Resources */,
 				618F709E1DB84E180006A9F0 /* Assets.xcassets in Resources */,
 				618F70A11DB84E180006A9F0 /* Main.storyboard in Resources */,
+				61A91D771DC712B9009858E9 /* LoginMarkViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +476,7 @@
 				61801EFE1DC0A7D800ED33BB /* XMLQueryCommodity.m in Sources */,
 				61801EFC1DC0A7D800ED33BB /* XMLOrderSubmit.m in Sources */,
 				61801EF91DC0A7D800ED33BB /* XMLIsLogin.m in Sources */,
+				61A91D761DC712B9009858E9 /* LoginMarkViewController.m in Sources */,
 				61801EA21DC0993B00ED33BB /* JSONModel.m in Sources */,
 				61801EA91DC0993B00ED33BB /* JSONValueTransformer.m in Sources */,
 				61801EA81DC0993B00ED33BB /* JSONKeyMapper.m in Sources */,
@@ -470,6 +485,7 @@
 				61801E821DC0987700ED33BB /* AFNetworkReachabilityManager.m in Sources */,
 				61801EA41DC0993B00ED33BB /* JSONModelError.m in Sources */,
 				61801F011DC0A7D800ED33BB /* XMLTradeServerinfo.m in Sources */,
+				61A91D7A1DC73D2C009858E9 /* AppModel.m in Sources */,
 				618F70AA1DB8775C0006A9F0 /* MyWindowViewControll.m in Sources */,
 				61801F001DC0A7D800ED33BB /* XMLSysTimeQuery.m in Sources */,
 				61801E841DC0987700ED33BB /* AFURLRequestSerialization.m in Sources */,

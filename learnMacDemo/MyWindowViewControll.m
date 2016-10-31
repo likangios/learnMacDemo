@@ -15,7 +15,13 @@
 @end
 
 @implementation MyWindowViewControll
-
+- (instancetype)initWithWindowNibName:(NSString *)windowNibName{
+    self = [super initWithWindowNibName:windowNibName];
+    if (self) {
+        
+    }
+    return self;
+}
 
 -(void)awakeFromNib{
     [super awakeFromNib];
