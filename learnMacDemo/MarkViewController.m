@@ -88,7 +88,7 @@
         NSNumber *obj = ids[i];
         NSButton *button =[[NSButton alloc]init];
         [button setButtonType:NSButtonTypePushOnPushOff];
-        [button setTitle:ids[i]];
+        [button setTitle:titles[i]];
         button.tag = obj.intValue;
         NSRect Rect = NSMakeRect(i%sizeOfRow*buttonW, i/sizeOfRow*height, buttonW, height);
         button.frame = Rect;

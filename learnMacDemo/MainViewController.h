@@ -10,4 +10,6 @@
 
 @interface MainViewController : NSViewController
 
+- (IBAction)updatePrice:(id)sender;
+- (IBAction)TextFieldValueChange:(NSTextField *)textfield;
 @end

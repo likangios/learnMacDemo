@@ -9,6 +9,8 @@
 #import "LoginMarkViewController.h"
 #import "MainViewController.h"
 #import "UserInfoModel.h"
+#import "TradModel.h"
+
 #import "XMLStoreService.h"
 #import "XMLLogin.h"
 
@@ -22,6 +24,11 @@
 @property (nonatomic,weak) IBOutlet  NSSecureTextField                   *pwd;
 
 @property (nonatomic,strong) NSArray               *accounts;
+
+
+@property (nonatomic,strong) NSArray               *lines;
+
+@property (nonatomic,weak) IBOutlet  NSComboBox                   *lineBox;
 
 @end
 
@@ -37,6 +44,9 @@
         self.phone.stringValue = model.account;
         self.pwd.stringValue = model.password;
     }
+    _lines = [XMLStoreService getTradeUrlsWithMarkId:self.markId];
+    TradModel *obj = _lines[0];
+    _lineBox.stringValue = obj.TradeUrl;
 }
 - (IBAction)cancelClick:(id)sender{
     [self dismissController:self];
@@ -51,7 +61,7 @@
     
     model.markId = self.markId;
     
-    [XMLStoreService storeUserInfo:model WithMarkId:[NSString stringWithFormat:@"%ld",(long)self.markId]];
+    [XMLStoreService storeUserInfo:model WithMarkId:self.markId];
     
 //    [ZTUntil showHUDAddedTo:self.view];
     
@@ -89,19 +99,36 @@
 #pragma mark NSComBoxDelegate 
 
 - (NSInteger)numberOfItemsInComboBox:(NSComboBox *)comboBox{
+    if (comboBox == _phone) {
     return _accounts.count;
+    }
+    return _lines.count;
+    
 }
 - (nullable id)comboBox:(NSComboBox *)comboBox objectValueForItemAtIndex:(NSInteger)index{
-    UserInfoModel *model = _accounts[index];
-    return model.account;
+    if (comboBox == _phone) {
+        UserInfoModel *model = _accounts[index];
+        return model.account;
+    }
+    TradModel *model = _lines[index];
+    return [NSString stringWithFormat:@"%@-%@",model.TradeName,model.TradeUrl];
 }
 - (void)comboBoxSelectionDidChange:(NSNotification *)notification{
-    [self updateAccount];
+    if (notification.object == _phone) {
+        [self updateAccount];
+    }else{
+        [self updateLine];
+    }
+}
+- (void)updateLine{
+    
+    TradModel *model = _lines[self.lineBox.selectedTag];
+    
+    [XMLStoreService StoreTRADEURL:model.TradeUrl];
+    
 }
 - (void)updateAccount{
     
     UserInfoModel *model = _accounts[self.phone.selectedTag];
-    
-    self.pwd.stringValue = model.password;
 }
 @end
