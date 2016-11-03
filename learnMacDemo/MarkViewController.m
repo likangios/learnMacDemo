@@ -13,17 +13,11 @@
 #import "LoginMarkViewController.h"
 @interface MarkViewController ()
 
-@property (nonatomic,strong) LoginMarkViewController               *loginMark;
 @end
 
 @implementation MarkViewController
 
-- (LoginMarkViewController *)loginMark{
-    if (!_loginMark) {
-        _loginMark = [[LoginMarkViewController alloc]initWithNibName:@"LoginMarkViewController" bundle:nil];
-    }
-    return _loginMark;
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"title";
@@ -114,8 +108,9 @@
             NSString *url = model.TradeUrl;
             [XMLStoreService StoreTRADEURL:url];
             [XMLStoreService storeTradeUrls:obj WithMarkId:[XMLStoreService markId]];
-            self.loginMark.markId = [NSString stringWithFormat:@"%ld",btn.tag];
-            [self presentViewControllerAsSheet:self.loginMark];
+          LoginMarkViewController*  _loginMark = [[LoginMarkViewController alloc]initWithNibName:@"LoginMarkViewController" bundle:nil];
+            _loginMark.markId = [NSString stringWithFormat:@"%ld",btn.tag];
+            [self presentViewControllerAsSheet:_loginMark];
         }else{
 //            [ZTUntil showErrorHUDViewAtView:self.view WithTitle:message];
         }

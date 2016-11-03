@@ -509,6 +509,17 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4RZ-Bv-POS">
+                    <rect key="frame" x="10" y="2" width="70" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="back" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NgK-4K-ynQ">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="backClick:" target="-2" id="Xtp-uz-etP"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="D1w-tE-n3f" firstAttribute="top" secondItem="EZg-Ok-obx" secondAttribute="bottom" constant="9" id="14b-6E-Had"/>

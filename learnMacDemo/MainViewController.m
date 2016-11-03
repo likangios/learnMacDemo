@@ -228,7 +228,7 @@ static int reloginCount = 0;
     
     NSTimeInterval startTimeInterval = startDate.timeIntervalSince1970;
     //    提前发起时间
-    NSTimeInterval early = 50;
+    NSTimeInterval early = 0;
     
     if (nowTimeInterval*1000 >= startTimeInterval*1000 + self.shijiancha - early) {
         
@@ -658,6 +658,10 @@ static NSTimeInterval  nottieminterval = 0.001;
         [XMLStoreService StoredefaultValue:textfield.stringValue Key:@"self.amount5"];
     }
     NSLog(@"text %@",textfield.stringValue);
+}
+- (IBAction)backClick:(id)sender{
+    
+    [self dismissController:self];
 }
 
 @end

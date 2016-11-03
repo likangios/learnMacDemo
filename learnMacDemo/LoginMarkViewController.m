@@ -17,7 +17,7 @@
 #import "XMLEncryptStr.h"
 #import "XMLUserLogin.h"
 
-@interface LoginMarkViewController ()<NSComboBoxDataSource,NSComboBoxDelegate>
+@interface LoginMarkViewController ()<NSComboBoxDataSource,NSComboBoxDelegate,NSViewControllerPresentationAnimator>
 
 @property (nonatomic,weak) IBOutlet  NSComboBox                   *phone;
 
@@ -35,18 +35,32 @@
 @implementation LoginMarkViewController
 
 
-
+//- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+//    if (self) {
+//        
+//    }
+//    return self;
+//}
+- (void)viewWillAppear{
+    [super viewWillAppear];
+  
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _accounts = [XMLStoreService userinfosWithMarkId:self.markId];
     if (_accounts.count) {
         UserInfoModel *model = _accounts[0];
         self.phone.stringValue = model.account;
         self.pwd.stringValue = model.password;
+        [self.phone reloadData];
     }
+    
     _lines = [XMLStoreService getTradeUrlsWithMarkId:self.markId];
     TradModel *obj = _lines[0];
     _lineBox.stringValue = obj.TradeUrl;
+    
 }
 - (IBAction)cancelClick:(id)sender{
     [self dismissController:self];
@@ -77,7 +91,8 @@
                     MainViewController *main = [[MainViewController alloc]initWithNibName:@"MainViewController" bundle:nil];
                     [self dismissController:self];
                     [[[NSApplication sharedApplication] keyWindow] setContentViewController:main];
-
+//                    [self presentViewController:main animator:self];
+//                    [self presentViewControllerAsModalWindow:main];
 //                    [ZTUntil showErrorHUDViewAtView:self.view WithTitle:@"OK"];
                 }else{
 //                    [ZTUntil showErrorHUDViewAtView:self.view WithTitle:message];
@@ -96,7 +111,8 @@
     
 
 }
-#pragma mark NSComBoxDelegate 
+
+#pragma mark NSComBoxDelegate
 
 - (NSInteger)numberOfItemsInComboBox:(NSComboBox *)comboBox{
     if (comboBox == _phone) {
